@@ -1,0 +1,163 @@
+\def \Subject {}
+
+% \def \Session {2}
+% \setcounter{chapter}{\Session}
+
+\section{\Subject}
+
+% \subsection{الف)}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c c||c||} 
+ \hline
+ P(Y) & x=4 & x=3 & x=2 & x=1 & Y/X \\ [0.5ex] 
+ \hline\hline
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{16}$ & $\dfrac{1}{8}$ & y=1 \\ 
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{8}$ & $\dfrac{1}{16}$ & y=2 \\
+ $\dfrac{1}{4}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & y=3 \\
+ $\dfrac{1}{4}$ & 0 & 0 & 0 & $\dfrac{1}{4}$ & y=4 \\
+ 1 & $\dfrac{1}{8}$ & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{2}$ & P(X) \\ [1ex] 
+ \hline
+\end{tabular}
+% \caption{سلام}
+% \label{1}
+\end{table}
+
+\subsection{الف)}
+
+ \null \hfill $ H(x,y) = -\sum_{x \subseteq X}\sum_{y \subseteq Y}  P(x,y) \cdot \log_{2} P(x,y) $
+ 
+
+\null \hfill $ H(x,y) = - 2 \cdot \dfrac{1}{8} \cdot \log_{2} \dfrac{1}{8} - 6 \cdot \dfrac{1}{16} \cdot \log_{2} \dfrac{1}{16} - 4 \cdot\dfrac{1}{32} \cdot \log_{2} \dfrac{1}{32} - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} - 3 \cdot 0 \cdot \log_{2} 0 $
+
+\null \hfill $  \rightarrow H(x,y) = \dfrac{108}{32} $ \\
+
+\null \hfill $ H(x) = -\sum_{i=1}^{N}  P_i \cdot \log_{2} P_i $
+
+\null \hfill $ H(x) = - \dfrac{1}{2} \cdot \log_{2} \dfrac{1}{2} - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} - \dfrac{1}{8} \cdot \log_{2} \dfrac{1}{8} - \dfrac{1}{8} \cdot \log_{2} \dfrac{1}{8} $
+
+\null \hfill $ \rightarrow H(x) = \dfrac{14}{8} $ \\
+
+\null \hfill $ H(y) = - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} - \dfrac{1}{4} \cdot \log_{2} \dfrac{1}{4} $
+
+\null \hfill $ \rightarrow H(y) = 2 $ \\
+
+
+\null \hfill $ H(x|y) = H(x,y) - H(y) $ \\
+\null \hfill $ H(x|y) = \dfrac{108}{32} - 2 $ \\
+\null \hfill $ \rightarrow H(x|y) = \dfrac{44}{32} $ \\
+
+\null \hfill $ H(y|x) = H(x,y) - H(x) $ \\
+\null \hfill $ H(y|x) = \dfrac{108}{32} - \dfrac{14}{8} $ \\
+\null \hfill $ \rightarrow H(y|x) = \dfrac{52}{32} $ \\
+
+
+\subsection{ب)}
+میزان ابهامی که بر طرف می شود، وقتی که خبر 
+x
+را میدانیم و خبر 
+y 
+به ما داده میشود بیشتر از بر عکس این حالت میباشد.
+
+
+\subsection{ج)}
+\null \hfill $H(x,y) = \dfrac{108}{32} $ \\
+
+
+\subsection{د)}
+با توجه به نمودار ون مجموع 
+ \(H(y|x)\)
+و
+ \(H(x)\)
+رابطه انتروپی مشترک را نشان می دهد.
+% رابطه انتروپی مشترک :
+% \null \hfill $H(x,y) = H(x)+H(y|x)=H(y)+H(x|y) $ 
+
+
+
+\subsection{ه)}
+\null \hfill $ H(x,y) <= H(x) + H(y) $ \\
+\null \hfill $ \dfrac{108}{32} <= \dfrac{14}{8} + 2 = \dfrac{120}{32}$ \\
+
+
+\subsection{و)}
+
+\null \hfill $ I(x;y) = H(x) + H(y) - H(x,y) $ \\
+\null \hfill $ I(x;y) = \dfrac{14}{8} + 2 - \dfrac{108}{32} $ \\
+\null \hfill $ \rightarrow I(x;y) = \dfrac{3}{8} $ \\
+
+
+ 
+\subsection{ز)}
+\null \hfill $ C = max_P_x (x) I(X;Y) $ \\
+\null \hfill $ \rightarrow C = \dfrac{3}{8} $ \\
+
+
+\subsection{ح)}
+برای تحقق این عمل باید مستقل باشند. :
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c c||c||} 
+ \hline
+ P(Y) & x=4 & x=3 & x=2 & x=1 & Y/X \\ [0.5ex] 
+ \hline\hline
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{16}$ & $\dfrac{1}{8}$ & y=1 \\ 
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{16}$ & $\dfrac{1}{8}$ & y=2 \\
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{16}$ & $\dfrac{1}{8}$ & y=3 \\
+ $\dfrac{1}{4}$ & $\dfrac{1}{32}$ & $\dfrac{1}{32}$ & $\dfrac{1}{16}$ & $\dfrac{1}{8}$ & y=4 \\
+ 1 & $\dfrac{1}{8}$ & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{2}$ & P(X) \\ [1ex] 
+ \hline
+\end{tabular}
+% \label{1}
+\end{table}
+\subsection{ط)}
+همانند سوال قبل باید اطلاعات متقابل را مینیمم کنیم زیرا با توجه به رابطه زیر، از آنجایی که 
+ \(H(x)\)
+و
+ \(H(y)\)
+ثابت هستند تنها راه بیشینه کردن 
+ \(H(x,y)\)، 
+کمینه کردن 
+ \(I(x;y)\)
+است.
+
+\null \hfill $ H(x,y) = H(x) + H(y) - I(x;y) $ \\
+
+\subsection{ی)}
+برای بیشینه کردن آنتروپی مشترک باید اطلاعات متقابل را مینیمم بکنیم، و این اتفاق زمانی رخ می دهد که دو پیشامد مستقل باشند.
+با توجه به روابط زیر نیز می توان به نتیجه رسید.
+
+\null \hfill \[P(x,y) = P(x) \cdot P(y)\] 
+\null \hfill  \[\sum_{x,y} P(x,y)\log \dfrac{P(x,y)}{P(x)P(y)} = \sum_{x,y} P(x,y)\log(1) = 0\]  \\
+
+
+\newpage
+\subsection{ک)}
+برای بیشینه کردن انتروپی باید احتمال رخدادن تمام حالات برابر باشند یعنی برابر 
+ \(\dfrac{1}{n}\)
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c c||c||} 
+ \hline
+ P(Y) & x=4 & x=3 & x=2 & x=1 & Y/X \\ [0.5ex] 
+ \hline\hline
+ $\dfrac{1}{4}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & y=1 \\ 
+ $\dfrac{1}{4}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & y=2 \\
+ $\dfrac{1}{4}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & y=3 \\
+ $\dfrac{1}{4}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & $\dfrac{1}{16}$ & y=4 \\
+ 1 & $\dfrac{1}{4}$ & $\dfrac{1}{4}$ & $\dfrac{1}{4}$ & $\dfrac{1}{4}$ & P(X) \\ [1ex] 
+ \hline
+\end{tabular}
+% \label{1}
+\end{table}
+\subsection{ل)}
+\null \hfill $ H(x) = log_{2} 4 = 2 $ \\
+\null \hfill $ H(y) = log_{2} 4 = 2 $ \\
+\null \hfill $ H(x,y) = log_{2} 16 = 4 $ \\
+فقط 
+ \(H(y)\)
+ثابت می ماند.

@@ -1,2 +1,3 @@
 # DataTransmission
-Data Transmission course at 6th term of university
+## DataTransmission course at 6th term of university
+Thanks to the our instructor Dr.Abolfazl Dianat I've done useful and helpful homeworks and project which taught me lots of things.
