@@ -1,0 +1,99 @@
+
+%---------------------------------define color-------------------------------
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray}{rgb}{0.9,0.9,0.9}
+\definecolor{myCyan}{rgb}{0,1,1}
+\definecolor{navyBlue}{HTML}{0a065d}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+%----------------------------------------------------------------------------
+
+
+\setminted{
+    frame=none,
+    framesep=2mm,
+    baselinestretch=1.0,
+    xrightmargin=0in,
+    xleftmargin=0in,
+    fontsize=\footnotesize,
+    bgcolor=aliceblue,
+    linenos=true
+}
+
+\makeatletter
+\renewcommand{\todo}[2][]{%
+    \@todo[caption={\rl{#2}}, #1]{\begin{spacing}{0.5}\rl{#2}\end{spacing}}%
+} 
+\makeatother 
+
+
+\setcounter{tocdepth}{1}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\setlist[enumerate]{itemsep=-3mm}
+\setlist[itemize]{itemsep=-3mm}
+
+
+\newfloat{program}{thp}{lop}
+\floatname{program}{نمونه کد}
+\newcommand{\programref}[1]{نمونه کد \ref{#1}}
+
+\renewcommand{\chaptername}{پروژه}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\grayBox}[1]{\colorbox{gray!10}{\lr{\texttt{#1}}}}
+\newcommand{\grayLBox}[1]{\fbox{\grayBox{\parbox{11.8 cm}{#1}}}}
+
+\AtBeginEnvironment{minted}{\setlength{\parskip}{-20pt}}
+\xpretocmd{\inputminted}{\par\vspace{-10pt}}{}{}
+\xapptocmd{\inputminted}{\par\vspace{-20pt}}{}{}
+
+
+\newcommand\chapterauthor[1]{\authortoc{#1}\printchapterauthor{#1}}
+
+\makeatletter
+\newcommand{\printchapterauthor}[1]{%
+    {\parindent0pt\vspace*{-25pt}%
+        \linespread{1.1}\large\scshape#1%
+        \par\nobreak\vspace*{35pt}}
+    \@afterheading%
+}
+\newcommand{\authortoc}[1]{%
+    \addtocontents{toc}{\vskip-10pt}%
+    \addtocontents{toc}{%
+        \protect\contentsline{chapter}%
+        {\hskip1.3em\mdseries\scshape\protect\scriptsize#1}{}{}}
+    \addtocontents{toc}{\vskip5pt}%
+}
+\makeatother
+
+
+\let\originalinputminted\inputminted
+\renewcommand{\inputminted}[2]{
+    \originalinputminted[frame=none]{#1}{S\Session/#2}
+}
+
+
+\DeclareRobustCommand{\mybox}[2][gray!20]{%
+    \begin{tcolorbox}[   %% Adjust the following parameters at will.
+        breakable,
+        left=0pt,
+        right=0pt,
+        top=0pt,
+        bottom=0pt,
+        colback=#1,
+        colframe=#1,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=0pt,outer arc=0pt,
+        ]
+        #2
+    \end{tcolorbox}
+}
