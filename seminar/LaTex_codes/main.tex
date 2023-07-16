@@ -1,0 +1,45 @@
+% !TEX program = xelatex
+\documentclass[10pt]{article}
+
+
+\usepackage[backend=biber]{biblatex}
+% \usepackage[authordate,autocite=inline,backend=biber,sorting=nyt,natbib=true]{biblatex-chicago}
+\addbibresource{references.bib}
+
+\input{commonmacros}
+
+\input{packages}
+\input{commands}
+\input{firstpage}
+\setlength{\tabcolsep}{18pt}
+\setlength\extrarowheight{10pt}
+
+\begin{document}
+
+
+	
+	
+\input{general}\newpage
+
+\tableofcontents
+% \listoftables
+\listoffigures
+\newpage
+
+
+
+
+\input{s_1}\newpage
+\input{s_2}\newpage
+\input{s_3}\newpage
+\input{s_4}\newpage
+\input{s_5}
+\input{s_6}\newpage
+
+
+\nocite{*}
+\lr{\printbibliography}
+
+
+
+\end{document}
